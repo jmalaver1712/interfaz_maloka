@@ -1,0 +1,73 @@
+  @import url('https://fonts.googleapis.com/css?family=Quicksand');
+
+  #ekiipu{
+    position: relative;
+    font-family: 'Quicksand', sans-serif;
+    min-height: 800px;
+  }
+
+  #body_angeles h1, h2{
+    color: #472066;
+  }
+
+  .open_contenido{
+    cursor: pointer;  
+  }
+
+  .open_video{
+    cursor: pointer;
+    font-size: 1.2em;
+    padding: 0px;
+  }
+
+  .ficha{
+    padding: 0px !important;
+  }
+
+  .portada{
+    padding: 0px !important;
+  }
+
+  .img_panel img{
+    border-radius: 20px;
+    margin: 15px;
+  }
+
+  .img_cap{
+    border-radius: 20px;
+    width: 100%;
+  }
+
+  .check_enlace{
+    font-weight: bold !important; 
+  }
+
+  .enlace_recurso > div{
+    background: #DDDDDD;
+    padding: 15px;
+    vertical-align: middle;
+    border-radius: 10px;
+  }
+
+  .regresa_dash{
+    cursor: pointer;
+    float: left;
+  }
+
+  .ocultar{
+    display: none;
+  }
+
+  .mostrar{
+    display: block;
+  }
+  
+  .maloka_head{
+    position: relative;
+  }
+
+  .btn_ayuda{
+    position: absolute;
+    top: 0px;
+    right: 0px;
+  }

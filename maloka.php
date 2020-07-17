@@ -80,6 +80,7 @@ echo "</pre>";
 	<script src="../interfaz_maloka/js/TweenMax.min.js"></script>
 
 	<link rel="stylesheet" href="../interfaz_maloka/css/style.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css" />
 </head>
 
 <body>
@@ -125,7 +126,7 @@ echo "</pre>";
 								}
 								if ($sec == $sem) {
 									$est = "A";
-									$clase = "open_contenido"; 
+									$clase = "open_contenido pulse"; 
 								}
 								if ($sec > $sem) {
 									$est = "I";

@@ -174,17 +174,17 @@ echo "</pre>";
 								foreach ($documentos as $enlace) {
 									if ($enlace['seccion'] == $seccion['seccion']) {
 										// EDITAR !!
-
 										?>
-
-										<div class="card enlace_recurso">
+										<div class="card enlace_recurso contenido">
 											<div class="card-body">
 												<a href="<?= $enlace['enlace'] ?>" target="_blank">
-													<center><h2><?= $enlace['nombre'] ?></h2></center>
+													<?php
+													$titulo = str_replace("-", "<br><br>", $enlace['nombre'] );
+													?>
+													<h2><?= $titulo ?></h2>
 												</a>
 											</div>
 										</div>
-
 										<?php
 									}
 								}
@@ -195,19 +195,44 @@ echo "</pre>";
 								<h4>Foros</h4>
 								<?php
 								foreach ($forum as $enlace) {
-									if ($enlace['seccion'] == $seccion['seccion']) {
-										// EDITAR !!
 
+									$findme = 'Preguntas';
+									$pos = strpos($enlace['nombre'], $findme);
+
+									$zoom = 'Zoom';
+									$ver_zoom = strpos($enlace['nombre'], $zoom);
+
+									if ($pos !== false && $ver_zoom === false) {
 										?>
-
-										<div class="card enlace_recurso">
+										<div class="card enlace_recurso preguntas">
 											<div class="card-body">
 												<a href="<?= $enlace['enlace'] ?>" target="_blank">
-													<center><h2><?= $enlace['nombre'] ?></h2></center>
+													<center>
+														<h2>
+														<img align="left" class="maloka_icon" src="../interfaz_maloka/imgs/preguntas.png">
+														<?= $enlace['nombre'] ?>		
+														</h2>
+													</center>
 												</a>
 											</div>
 										</div>
-
+										<?php
+									}
+									else if ($enlace['seccion'] == $seccion['seccion'] && $ver_zoom === false) {
+										// EDITAR !!
+										?>
+										<div class="card enlace_recurso experiencias">
+											<div class="card-body">
+												<a href="<?= $enlace['enlace'] ?>" target="_blank">
+													<center>
+														<h2>
+														<img align="left" class="maloka_icon" src="../interfaz_maloka/imgs/experiencias.png">
+														<?= $enlace['nombre'] ?>		
+														</h2>
+													</center>
+												</a>
+											</div>
+										</div>
 										<?php
 									}
 								}
@@ -216,40 +241,42 @@ echo "</pre>";
 								<h4>Chat</h4>
 								<?php
 								foreach ($chat as $enlace) {
-									if ($enlace['seccion'] == $seccion['seccion']) {
-										// EDITAR !!
-
-										?>
-
-										<div class="card enlace_recurso">
-											<div class="card-body">
-												<a href="<?= $enlace['enlace'] ?>" target="_blank">
-													<center><h2><?= $enlace['nombre'] ?></h2></center>
-												</a>
-											</div>
+									?>
+									<div class="card enlace_recurso maloka_chat">
+										<div class="card-body">
+											<a href="<?= $enlace['enlace'] ?>" target="_blank">
+												<center>
+													<h2>
+													<img align="left" class="maloka_icon" src="../interfaz_maloka/imgs/maloka_chat.png">
+													<?= $enlace['nombre'] ?>
+													</h2>
+												</center>
+											</a>
 										</div>
-
-										<?php
-									}
+									</div>
+									<?php
 								}
 								?>
 
 								<h4>Zoom</h4>
 								<?php
-								foreach ($enlaces as $enlace) {
-									if ($enlace['seccion'] == $seccion['seccion']) {
-										// EDITAR !!
-
+								foreach ($forum as $enlace) {
+									$findme = 'Zoom';
+									$pos = strpos($enlace['nombre'], $findme);
+									if ($pos !== false) {
 										?>
-
-										<div class="card enlace_recurso">
+										<div class="card enlace_recurso zoom">
 											<div class="card-body">
 												<a href="<?= $enlace['enlace'] ?>" target="_blank">
-													<center><h2><?= $enlace['nombre'] ?></h2></center>
+													<center>
+														<h2>
+														<img align="left" class="maloka_icon" src="../interfaz_maloka/imgs/zoom.png">
+														<?= $enlace['nombre'] ?>		
+														</h2>
+													</center>
 												</a>
 											</div>
 										</div>
-
 										<?php
 									}
 								}

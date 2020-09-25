@@ -44,7 +44,14 @@ $semanas = [
     "0" => ["0", "1"],
     "1" => ["0", "1"],
     "2" => "2",
-    "3" => ["3", "4"],
+    "3" => "3",
+    "4" => "4",
+    "5" => "5",
+    "6" => "6",
+    "7" => "7",
+    "8" => "8",
+    "9" => ["9", "13"],
+    "10" => "10",
 ];
 
 $fecha_now = date("Y-m-d H:i:s");
@@ -139,8 +146,8 @@ echo "</pre>";
 								*/
 								?>
 								<div class="ficha col-md-2 col-sm-12">
-									<a class="<?= $clase ?>" recurso="<?= $secciones[$sec]['seccion'] ?>">
-										<img src="../interfaz_maloka/imgs/SEM<?= $sec ?>_<?= $est ?>.png" width="100%">   
+									<a id="maloka_sem_<?= $sec ?>" class="<?= $clase ?>" recurso="<?= $secciones[$sec]['seccion'] ?>">
+										<img id="maloka_img_<?= $sec ?>" src="../interfaz_maloka/imgs/SEM<?= $sec ?>_<?= $est ?>.png" width="100%">   
 									</a>
 								</div>
 								<?php

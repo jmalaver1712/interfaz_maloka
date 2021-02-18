@@ -10,6 +10,8 @@ include("../interfaz_maloka/maloka.php");
 
 En la parte final del Archivo, Antes de 
 
+
+
 echo $OUTPUT->footer();
 
 

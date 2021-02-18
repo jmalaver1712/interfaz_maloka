@@ -121,7 +121,6 @@ class interfaz extends Conexion{
 						$data[$aux]['tipo'] = $tipo;
 						$data[$aux]['enlace'] = $ident;
 						$data[$aux]['nombre'] = ($nombre);
-						$data[$aux]['intro'] = $intro_down;
 						$aux++;
 					}
 				}
@@ -156,7 +155,6 @@ class interfaz extends Conexion{
 							$data[$aux]['id'] = $value['id'];
 							$data[$aux]['module'] = $value['module'];
 							$data[$aux]['seccion'] = $seccion;
-							$data[$aux]['indice'] = $indice;
 							$data[$aux]['tipo'] = $tipo;
 							$data[$aux]['enlace'] = $enlace;
 							$data[$aux]['nombre'] = ($nombre);
@@ -194,7 +192,6 @@ class interfaz extends Conexion{
 							$data[$aux]['id'] = $value['id'];
 							$data[$aux]['module'] = $value['module'];
 							$data[$aux]['seccion'] = $seccion;
-							$data[$aux]['indice'] = $indice;
 							$data[$aux]['tipo'] = $tipo;
 							$data[$aux]['enlace'] = $enlace;
 							$data[$aux]['nombre'] = ($nombre);
@@ -233,7 +230,6 @@ class interfaz extends Conexion{
 							$data[$aux]['id'] = $value['id'];
 							$data[$aux]['module'] = $value['module'];
 							$data[$aux]['seccion'] = $seccion;
-							$data[$aux]['indice'] = $indice;
 							$data[$aux]['tipo'] = $tipo;
 							$data[$aux]['enlace'] = $enlace;
 							$data[$aux]['nombre'] = ($nombre);

@@ -1,0 +1,55 @@
+
+html, body{
+	background-image: url("../img/Fondo_2.png");
+	background-size: 110% auto;
+	background-repeat: no-repeat;
+}
+
+#mapa{
+	margin: 0px 25%;
+	width: 50%;
+}
+
+.fondo_maloka{
+	position: relative;
+}
+
+
+#maloka_1{
+	position: absolute;
+	margin-top: 32%;
+	left: 44%;
+	z-index: 9;
+	width: 23%;
+}
+
+#maloka_2{
+	position: absolute;
+	margin-top: 20%;
+	left: 27%;
+	z-index: 8;
+	width: 50%;
+}
+
+#maloka_3{
+	position: absolute;
+	top: 0%;
+	left: 0%;
+	z-index: 7;
+	width: 100%;
+}
+
+.img_maloka{
+	width: 100%;
+}
+
+#enlaces{
+	position: absolute;
+	width: 20%;
+	right: 0%;
+	margin-top: 40%;
+}
+
+#enlaces img{
+	width: 100%;
+}

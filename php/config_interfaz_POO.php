@@ -54,6 +54,7 @@ class interfaz extends Conexion{
 			$data[$aux]['nombre'] = ($row['name']);
 			// Si tiene contenido
 			if(strlen($secuencia) > 0){
+				$data[$aux]['id'] = $row['id'];
 				$data[$aux]['contenidos'] = $separar;
 				$data[$aux]['seccion'] = $seccion;
 				$aux++;
@@ -70,10 +71,11 @@ class interfaz extends Conexion{
 		$data = array();
 		foreach ($origen as $row){
 			$ids = $row['contenidos'];
-			$seccion = $row['seccion'];	
+			$seccion = $row['id'];
+			$name_section = $row['nombre'];
 			foreach ($ids as $id){
 				
-				$qr = "select instance, module, id, section from ".DB_PRE."course_modules where deletioninprogress = 0 and id = '".$id."' and section = '".$seccion."' and course = '".ID_CURSO."' order by instance";
+				$qr = "SELECT a.instance, a.module, b.name, a.id, a.section, '".$name_section."' as name_section FROM ".DB_PRE."course_modules a , ".DB_PRE."modules b WHERE a.deletioninprogress = 0 AND a.id = '".$id."' AND a.section = '".$seccion."' AND a.course = '".ID_CURSO."' AND a.module = b.id AND a.visible = '1' ORDER BY instance";
 
 				$result = $this->_db->query($qr);
 
@@ -97,7 +99,7 @@ class interfaz extends Conexion{
 		$data = array();
 		foreach ($origen as $row) {
 			foreach ($row as $value) {
-				if($value['module'] == 20){
+				if($value['name'] == 'url'){
 
 					$seccion = $value['section'];
 					
@@ -138,7 +140,7 @@ class interfaz extends Conexion{
 		$tipo = "documento";
 		foreach ($origen as $row) {
 			foreach ($row as $value) {
-				if($value['module'] == 17){
+				if($value['name'] == 'resource'){
 				$seccion = $value['section'];
 				$id = $value['id'];
 				$result = $this->_db->query("select name from ".DB_PRE."resource where id = ".$value['instance']." and course= ".ID_CURSO);
@@ -175,7 +177,7 @@ class interfaz extends Conexion{
 		$tipo = "chat";
 		foreach ($origen as $row) {
 			foreach ($row as $value) {
-				if($value['module'] == 4){
+				if($value['name'] == 'chat'){
 				$seccion = $value['section'];
 				$id = $value['id'];
 				$result = $this->_db->query("select name from ".DB_PRE."chat where id = ".$value['instance']." and course= ".ID_CURSO);
@@ -213,7 +215,7 @@ class interfaz extends Conexion{
 		$tipo = "forum";
 		foreach ($origen as $row) {
 			foreach ($row as $value) {
-				if($value['module'] == 9){
+				if($value['name'] == 'forum'){
 				$seccion = $value['section'];
 				$id = $value['id'];
 				$result = $this->_db->query("select name from ".DB_PRE."forum where id = ".$value['instance']." and course= ".ID_CURSO);

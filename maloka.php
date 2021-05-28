@@ -18,40 +18,40 @@ $chat = $interfaz->con_chat();
 
 
 $ordenes = [
-    "1" => "0",
-    "2" => "4",
-    "3" => "6",
-    "4" => "13",
-    "5" => "3",
-    "6" => "7",
-    "7" => "14",
-    "8" => "9",
-    "9" => "2",
-    "10" => "11",
-    "11" => "1",
-    "12" => "10",
-    "13" => "12",
-    "14" => "5",
-    "15" => "8"
+	"1" => "0",
+	"2" => "4",
+	"3" => "6",
+	"4" => "13",
+	"5" => "3",
+	"6" => "7",
+	"7" => "14",
+	"8" => "9",
+	"9" => "2",
+	"10" => "11",
+	"11" => "1",
+	"12" => "10",
+	"13" => "12",
+	"14" => "5",
+	"15" => "8"
 ];
 
 $semanas = [
-    "0" => ["0", "1"],
-    "1" => ["0", "1"],
-    "2" => "2",
-    "3" => "3",
-    "4" => "4",
-    "5" => "5",
-    "6" => "6",
-    "7" => "7",
-    "8" => "8",
-    "9" => "9",
-    "10" => "10",
-    "11" => "11",
-    "12" => "12",
-    "13" => "13",
-    "14" => "14",
-    "15" => "15"
+	"0" => ["0", "1"],
+	"1" => ["0", "1"],
+	"2" => "2",
+	"3" => "3",
+	"4" => "4",
+	"5" => "5",
+	"6" => "6",
+	"7" => "7",
+	"8" => "8",
+	"9" => "9",
+	"10" => "10",
+	"11" => "11",
+	"12" => "12",
+	"13" => "13",
+	"14" => "14",
+	"15" => "15"
 ];
 
 $fecha_now = date("Y-m-d H:i:s");
@@ -115,46 +115,42 @@ echo "</pre>";
 						$aux = 0;
 						$salto = 0;
 						foreach ($ordenes as $orden => $sec) {
-								if ($salto == 5) {
-									?>
-									<div class="col-md-1 col-sm-12">
-										<br>
-									</div>
-									<div class="col-md-1 col-sm-12">
-										<br>
-									</div>
-									<?php
-									$salto = 0; 
-								}
-
-								if ($sec < $sem) {
-									$est = "N";
-									$clase = "open_contenido"; 
-								}
-								if ($sec == $sem) {
-									$est = "A";
-									$clase = "open_contenido pulse"; 
-								}
-								if ($sec > $sem) {
-									$est = "I";
-									$clase = ""; 
-								}
-								/*
-								$pasado = "N";
-								$activo = "A";
-								$inactivo = "I";
-								*/
+							if ($salto == 5) {
 								?>
-								<div class="ficha col-md-2 col-sm-12">
-									<a id="maloka_sem_<?= $sec ?>" class="<?= $clase ?>" recurso="<?= $secciones[$sec]['seccion'] ?>">
-										<img id="maloka_img_<?= $sec ?>" src="../interfaz_maloka/imgs/SEM<?= $sec ?>_<?= $est ?>.png" width="100%">   
-									</a>
+								<div class="col-md-1 col-sm-12">
+									<br>
+								</div>
+								<div class="col-md-1 col-sm-12">
+									<br>
 								</div>
 								<?php
+								$salto = 0; 
+							}
+
+							if ($sec < $sem || $sec == "14") {
+								$est = "N";
+								$clase = "open_contenido"; 
+							}
+							else if ($sec == $sem) {
+								$est = "A";
+								$clase = "open_contenido pulse"; 
+							}
+							else if ($sec > $sem) {
+								$est = "I";
+								$clase = ""; 
+							}
+
+							?>
+							<div class="ficha col-md-2 col-sm-12">
+								<a id="maloka_sem_<?= $sec ?>" class="<?= $clase ?>" recurso="<?= $secciones[$sec]['seccion'] ?>">
+									<img id="maloka_img_<?= $sec ?>" src="../interfaz_maloka/imgs/SEM<?= $sec ?>_<?= $est ?>.png" width="100%">   
+								</a>
+							</div>
+							<?php
 							$salto++;
 						}
 						?>
-						
+
 						<div class="col-md-1 col-sm-12">
 							<br>
 						</div>
@@ -170,7 +166,7 @@ echo "</pre>";
 					?>
 					<div id="<?= $seccion['seccion'] ?>" class="capitulos ocultar <?= "cap_".$aux_sec ?>" >
 						<div class="row">
-						<a href="#!" class="regresa_dash"><h5><b> &larr; Volver al inicio</b></h5></a>
+							<a href="#!" class="regresa_dash"><h5><b> &larr; Volver al inicio</b></h5></a>
 						</div>
 						<center><h2><?= $seccion['nombre'] ?></h2></center>
 
@@ -198,7 +194,7 @@ echo "</pre>";
 								?>
 							</div>
 							<div class="list_enlaces col-md-4">
-								
+
 								<h4>Foros</h4>
 								<?php
 								foreach ($forum as $enlace) {
@@ -216,8 +212,8 @@ echo "</pre>";
 												<a href="<?= $enlace['enlace'] ?>" target="_blank">
 													<center>
 														<h2>
-														<img align="left" class="maloka_icon" src="../interfaz_maloka/imgs/preguntas.png">
-														<?= $enlace['nombre'] ?>		
+															<img align="left" class="maloka_icon" src="../interfaz_maloka/imgs/preguntas.png">
+															<?= $enlace['nombre'] ?>		
 														</h2>
 													</center>
 												</a>
@@ -233,8 +229,8 @@ echo "</pre>";
 												<a href="<?= $enlace['enlace'] ?>" target="_blank">
 													<center>
 														<h2>
-														<img align="left" class="maloka_icon" src="../interfaz_maloka/imgs/experiencias.png">
-														<?= $enlace['nombre'] ?>		
+															<img align="left" class="maloka_icon" src="../interfaz_maloka/imgs/experiencias.png">
+															<?= $enlace['nombre'] ?>		
 														</h2>
 													</center>
 												</a>
@@ -254,8 +250,8 @@ echo "</pre>";
 											<a href="<?= $enlace['enlace'] ?>" target="_blank">
 												<center>
 													<h2>
-													<img align="left" class="maloka_icon" src="../interfaz_maloka/imgs/maloka_chat.png">
-													<?= $enlace['nombre'] ?>
+														<img align="left" class="maloka_icon" src="../interfaz_maloka/imgs/maloka_chat.png">
+														<?= $enlace['nombre'] ?>
 													</h2>
 												</center>
 											</a>
@@ -277,8 +273,8 @@ echo "</pre>";
 												<a href="<?= $enlace['enlace'] ?>" target="_blank">
 													<center>
 														<h2>
-														<img align="left" class="maloka_icon" src="../interfaz_maloka/imgs/zoom.png">
-														<?= $enlace['nombre'] ?>		
+															<img align="left" class="maloka_icon" src="../interfaz_maloka/imgs/zoom.png">
+															<?= $enlace['nombre'] ?>		
 														</h2>
 													</center>
 												</a>

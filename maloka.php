@@ -127,7 +127,7 @@ echo "</pre>";
 								$salto = 0; 
 							}
 
-							if ($sec < $sem || $sec == "14") {
+							if ($sec < $sem) {
 								$est = "N";
 								$clase = "open_contenido"; 
 							}

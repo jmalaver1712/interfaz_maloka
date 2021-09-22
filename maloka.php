@@ -63,16 +63,6 @@ $dias = $interval->format('%a');
 
 $sem = round( $dias/7 ,0);
 
-echo "<pre>";
-// print_r($enlaces);
-// print_r($ids_seccion);
-// print_r($forum);
-
-// print_r($chat);
-// print_r($user);
-echo "</pre>";
-
-
 ?>
 <!DOCTYPE html>
 <html>
@@ -102,9 +92,11 @@ echo "</pre>";
 			<div id="body_angeles">
 				<div class="row maloka_head">
 					<img src="../interfaz_maloka/imgs/banner.png" width="100%">
+					<!--
 					<a href="https://helpdesk.multipleskills.com.co/" target="_blank">
 						<img class="btn_ayuda" src="../interfaz_maloka/imgs/BT_ayuda.png" width="10%">
 					</a>
+					-->
 				</div>
 				<div id="dash_capitulos">
 					<div class="row centered">
